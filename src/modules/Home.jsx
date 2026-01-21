@@ -12,7 +12,7 @@ const Home = () => {
           </Typography>
 
           <Typography variant="h5" component="h2" gutterBottom>
-            Hi, I'm Antony Roger, a full stack developer.
+            Hi, I'm Antony Roger, a full stack developer,javascript developer.
           </Typography>
 
           <Button variant="contained" sx={{ mt: 3 }} onClick={()=>navigate("/projects")}>
