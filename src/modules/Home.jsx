@@ -4,12 +4,16 @@ import {use,useEffect}from 'react';
 import avatar from"..assets/image.png";
 const Home = () => {
     const navigate=useNavigate();
+
+    const BASE_URL=import.meta.env.VITE_BASE_URL;
+    console.log("BASE_URL:::",BASE_URL);
     useEffect(()=>{
-      axios.get('http://localhost:5000/auth').then((response)=>{
+      axios.get(`${BASE_URL}/user`).then((response)=>{
         console.log(response.data);
         
       });
     },[]);
+    const username=localStorage.getItem("username")
   return (
     <Container sx={{ textAlign: "center", mt: 8 }}>
       <Grid container justifyContent="center" sx={{ mb: 4 }}>

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const Register = () => {
     const navigate=useNavigate();
+    const BASE_URL = import.meta.env.VITE_BASE_URL;
     const [userData,setUserData]=useState({});
     const handleChange=(event)=>{
         const{name,value}=event.target;
@@ -11,8 +12,10 @@ const Register = () => {
     }
     const handleRegister=async()=>{
         console.log("Register user data",userData);
-     const response=await  axios.post("http://localhost:5000/auth/register",userData);
+     const response=await  axios.post(`${BASE_URL}/auth/register`,userData);
      console.log("Registration response",response.data);
+     alert(response.data.message);
+     navigate("/");
 
      
     }

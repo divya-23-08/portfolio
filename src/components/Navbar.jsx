@@ -3,8 +3,15 @@ import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const isAuthenticated=localStorage.getItem("token");
+console.log("navbar isauthenticated",isAuthenticated);
+  const handlelogout=()=>{
+    localStorage.removeItem("token");
+    navigate("/");
+  }
 
   return (
+    isAuthenticated &&(
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -23,8 +30,10 @@ const Navbar = () => {
         <Button color="inherit" onClick={() => navigate("/contacts")}>
           Contacts
         </Button>
+        <Button color="inherit" onClick={handlelogout}>logout</Button>
       </Toolbar>
     </AppBar>
+    )
   );
 };
 
