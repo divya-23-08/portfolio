@@ -11,7 +11,7 @@ const Navbar = () => {
           My Portfolio
         </Typography>
 
-        <Button color="inherit" onClick={() => navigate("/")}>
+        <Button color="inherit" onClick={() => navigate("/home")}>
           Home
         </Button>
         <Button color="inherit" onClick={() => navigate("/skills")}>

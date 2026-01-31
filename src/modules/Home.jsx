@@ -1,8 +1,15 @@
 import { Button, Container, Grid, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-
+import {use,useEffect}from 'react';
+import avatar from"..assets/image.png";
 const Home = () => {
     const navigate=useNavigate();
+    useEffect(()=>{
+      axios.get('http://localhost:5000/auth').then((response)=>{
+        console.log(response.data);
+        
+      });
+    },[]);
   return (
     <Container sx={{ textAlign: "center", mt: 8 }}>
       <Grid container justifyContent="center" sx={{ mb: 4 }}>
